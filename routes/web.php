@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'DashboardController@index')->name('home');
 Route::get('/data-tables', 'DashboardController@table')->name('table');
+Route::resource('/pertanyaan', 'PertanyaanController');
