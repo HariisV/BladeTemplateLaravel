@@ -64,7 +64,9 @@ class PertanyaanController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = user::get();
+        $pertanyaan = pertanyaan::where('id', $id)->first();
+        return view('pertanyaan.update',compact('pertanyaan', 'user'));
     }
 
     /**
@@ -76,7 +78,8 @@ class PertanyaanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = pertanyaan::findOrFail($id)->update($request->all());
+        return redirect()->route('pertanyaan.index');
     }
 
     /**
@@ -90,6 +93,6 @@ class PertanyaanController extends Controller
         $data = pertanyaan::findOrFail($id);
         $data->delete();
 
-        return 'berhasil';
+        return redirect()->route('pertanyaan.index');
     }
 }

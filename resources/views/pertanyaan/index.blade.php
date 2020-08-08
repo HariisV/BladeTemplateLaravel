@@ -8,7 +8,7 @@
                     <th>#</th>
                     <th>UserName</th>
                     <th>Judul</th>
-                    <th>action</th>
+                    <th>Info</th>
                 </thead>
                 <tbody>
                     
@@ -21,16 +21,7 @@
                                 <a href="{{route('pertanyaan.show', $pertanyaann->id)}}" class="btn btn-primary">
                                     <i class="fas fa-info-circle"></i>
                                 </a>
-                                <a href="{{route('pertanyaan.update', $pertanyaann->id)}}" class="btn btn-info">
-                                    <i class="fas fa-pencil-alt"></i>
-                                </a>
-                            <form action="{{route('pertanyaan.destroy', $pertanyaann->id)}}" method="post" class="d-inline">
-                                @csrf 
-                                @method('delete')
-                                <button class="btn btn-danger">
-                                    <i class="fas fa-trash-alt"></i>
-                                </button>
-                            </form>
+                                
                             </td>
                         </tr>
                     @empty
